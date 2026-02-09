@@ -24,32 +24,36 @@
     padding: 0;
     background-color: black;
     display: flex;
-    justify-content: center; /* Centers the game horizontally */
-    align-items: center;     /* Centers the game vertically */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
+    /* This stops the phone from zooming in when you tap buttons */
+    touch-action: manipulation; 
   }
 
-  /* This container stays at the 'correct' size internally */
   #divApplab {
     width: 320px !important;
     height: 450px !important;
     position: relative !important;
-    /* This magic line makes the 320px box grow to fit the iPad screen */
-    transform: scale(2.2) !important; 
-    transform-origin: center !important;
+    /* Scale to fit: 0.9 means it leaves a tiny bit of space on the edges */
+    transform: scale(calc(min(100vw / 320, 100vh / 450) * 0.9)) !important;
+    transform-origin: center center !important;
+    background-color: #DAF700; /* Matching your preScreen color */
   }
 
-  /* If 2.2 is too big or small, change that number until it fits perfectly */
-  
   .screen {
     width: 320px !important;
     height: 450px !important;
+    display: block !important;
   }
 
-  /* This kills the invisible click-blocking layer */
+  /* CRITICAL: This removes the invisible layer that blocks phone taps */
   .filter_layer {
     display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 </style>
   </head>
