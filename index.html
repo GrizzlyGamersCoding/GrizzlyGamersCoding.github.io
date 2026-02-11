@@ -1,9 +1,10 @@
-
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>The Ending Game!</title>
-    <style type="text/css">
-        body, html {
+    <style>
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -12,27 +13,30 @@
             background: #000;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center
         }
+
         iframe {
             width: 320px;
             height: 450px;
             border: none;
-            transform-origin: center;
+            transform-origin: center
         }
     </style>
     <script>
         function resize() {
-            const iframe = document.querySelector('iframe');
-            const scaleX = window.innerWidth / 320;
-            const scaleY = window.innerHeight / 450;
-            iframe.style.transform = `scale(${scaleX}, ${scaleY})`;
+            const i = document.querySelector("iframe"),
+                s = window.innerWidth / 320,
+                e = window.innerHeight / 450,
+                t = Math.min(s, e);
+            i.style.transform = `scale(${t})`
         }
-        window.onresize = resize;
-        window.onload = resize;
+        window.onresize = resize, window.onload = resize;
     </script>
 </head>
+
 <body>
     <iframe src="https://studio.code.org/projects/applab/40b2f6de-1140-4362-b3ee-eee021e452d7/embed/?nophone=true" allowfullscreen></iframe>
 </body>
+
 </html>
