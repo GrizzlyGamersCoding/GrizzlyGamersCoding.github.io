@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The Ending Game!</title>
+    <title>The Ending Game! Fullscreen</title>
     <style type="text/css">
         body, html {
             margin: 0;
@@ -19,7 +19,8 @@
             height: 450px;
             border: none;
             transform-origin: center;
-            image-rendering: pixelated;
+            /* Keeps the image sharp when scaled */
+            image-rendering: pixelated; 
         }
     </style>
     <script>
@@ -34,6 +35,10 @@
     </script>
 </head>
 <body>
-    <iframe src="https://studio.code.org/projects/applab/40b2f6de-1140-4362-b3ee-eee021e452d7/embed/?nophone=true" allowfullscreen></iframe>
+    <iframe 
+        src="https://studio.code.org/projects/applab/40b2f6de-1140-4362-b3ee-eee021e452d7/embed?nosandbox=true&nophone=true" 
+        allowfullscreen 
+        sandbox="allow-scripts allow-forms allow-same-origin"
+    ></iframe>
 </body>
 </html>
